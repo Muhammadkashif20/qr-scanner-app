@@ -8,7 +8,7 @@ const Header = () => {
   const navLinks = ["Home", "Scan", "History"];
 
   return (
-    <header className="w-full fixed top-0 z-50 bg-gradient-to-r from-gray-700 via-black to-gray-700 shadow-lg">
+    <header className="w-full fixed top-0 z-50 bg-gray-900/90 backdrop-blur-md shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
         {/* Logo */}
@@ -27,7 +27,7 @@ const Header = () => {
           {navLinks.map((link) => (
             <motion.a 
               key={link}
-              whileHover={{ scale: 1.1, color: "#06b6d4" }}
+              whileHover={{ scale: 1.1, color: "#38bdf8" }} // Sky blue accent
               className="transition cursor-pointer"
             >
               {link}
@@ -37,8 +37,8 @@ const Header = () => {
 
         {/* Action Button */}
         <motion.button
-          whileHover={{ scale: 1.05, backgroundColor: "#06b6d4", color: "#fff" }}
-          className="hidden md:block px-6 py-2 rounded-xl border border-cyan-400/50 text-cyan-300 bg-cyan-500/20 font-semibold transition"
+          whileHover={{ scale: 1.05, backgroundColor: "#38bdf8", color: "#000" }} // Sky blue hover
+          className="hidden md:block px-6 py-2 rounded-xl border border-cyan-400/50 text-cyan-400 bg-cyan-500/10 font-semibold transition"
         >
           Start Scan
         </motion.button>
@@ -54,12 +54,12 @@ const Header = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-gray-800/90 backdrop-blur-md px-6 py-4 flex flex-col gap-4"
+          className="md:hidden bg-gray-900/95 backdrop-blur-md px-6 py-4 flex flex-col gap-4"
         >
           {navLinks.map((link) => (
             <a key={link} className="text-white font-medium hover:text-cyan-400 transition">{link}</a>
           ))}
-          <button className="px-5 py-2 rounded-xl border border-cyan-400/50 text-cyan-300 bg-cyan-500/20 font-semibold hover:bg-cyan-500/40 hover:text-white transition">
+          <button className="px-5 py-2 rounded-xl border border-cyan-400/50 text-cyan-400 bg-cyan-500/10 font-semibold hover:bg-cyan-500/20 hover:text-white transition">
             Start Scan
           </button>
         </motion.div>
