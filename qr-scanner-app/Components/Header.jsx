@@ -19,7 +19,7 @@ const Header = () => {
           className="flex items-center gap-2 text-white text-2xl font-bold"
         >
           {/* Replace with <img src="logo.png" /> if you have logo image */}
-          <span className="text-cyan-400">QR</span>Scan
+          <span className="text-cyan-400">QR</span>Scanner
         </motion.div>
 
         {/* Desktop Nav */}
