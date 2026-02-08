@@ -16,6 +16,9 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />}/>
+        <Route path="/scanner" element={<Scanner />}/>
+        <Route path="/history" element={<History />}/>
+
       </Routes>
       </BrowserRouter>
       {/* <Scanner />

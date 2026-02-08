@@ -22,15 +22,15 @@ const WorkDetail = () => {
   ];
 
   return (
-    <section className="w-full bg-gray-900 py-24">
+    <section className="w-full py-28 bg-gray-950">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-24">
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             How It <span className="text-cyan-400">Works</span>
           </h2>
-          <p className="mt-4 text-white/60 max-w-xl mx-auto">
+          <p className="mt-4 text-white/60 max-w-xl mx-auto text-lg">
             Scan QR codes in just three simple and fast steps.
           </p>
         </div>
@@ -40,9 +40,9 @@ const WorkDetail = () => {
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              whileHover={{ y: -10 }}
-              transition={{ duration: 0.3 }}
-              className="text-center"
+              whileHover={{ y: -10, boxShadow: "0px 12px 25px rgba(0, 203, 213, 0.25)" }}
+              transition={{ duration: 0.4 }}
+              className="text-center p-8 rounded-2xl bg-gray-900/40 border border-white/10 backdrop-blur-sm"
             >
               <div className="w-20 h-20 mx-auto rounded-2xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-cyan-400 text-3xl mb-6">
                 {step.icon}
@@ -52,7 +52,7 @@ const WorkDetail = () => {
                 {step.title}
               </h3>
 
-              <p className="text-white/60 text-sm leading-relaxed max-w-xs mx-auto">
+              <p className="text-white/60 text-sm leading-relaxed">
                 {step.desc}
               </p>
             </motion.div>

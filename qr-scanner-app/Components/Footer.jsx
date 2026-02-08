@@ -1,4 +1,5 @@
 import React from "react";
+import { AiOutlineQrcode } from "react-icons/ai";
 import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
@@ -10,11 +11,13 @@ const Footer = () => {
         {/* Top */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
 
-          {/* Brand */}
           <div>
-            <h2 className="text-2xl font-bold text-white mb-3">
-              QR<span className="text-cyan-400">Scan</span>
+            <div className="flex space-x-2">
+               <AiOutlineQrcode className="w-8 h-8 text-cyan-400" />
+            <h2 className="text-2xl font-bold text-white mb-3 highlight-text">
+              QR-<span className="text-cyan-400">Scanner</span>
             </h2>
+            </div>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
               A modern and secure QR code scanner built for speed,
               simplicity, and privacy.

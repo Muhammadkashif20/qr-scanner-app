@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <section className="w-full min-h-screen bg-gray-950 flex items-center py-24">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+      <div className="max-w-7xl mx-auto px-12 grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
 
         {/* LEFT SIDE - TEXT */}
         <div className="text-center md:text-left space-y-6">
@@ -23,7 +23,7 @@ const Hero = () => {
             transition={{ delay: 0.2 }}
             className="text-white/60 text-lg max-w-xl"
           >
-            Fast, clean, and secure QR scanning experience. Just align the code and go.
+            Fast, clean, and secure QR scanning experience.<br/> Just align the code and go.
           </motion.p>
 
           <motion.button

@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+.highlight-text {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.2) 0%,   /* light contrast start */
+    rgba(255,255,255,0.8) 50%,  /* bright white highlight */
+    rgba(255,255,255,0.2) 100%  /* light contrast end */
+  );
+  background-size: 300% 100%;    /* make the sweep longer */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: highlightMove 5s linear infinite; /* slower sweep */
+}
+
+@keyframes highlightMove {
+  0% { background-position: -300% 0; }
+  100% { background-position: 300% 0; }
+}

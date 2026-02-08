@@ -22,7 +22,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="w-full bg-gray-950 py-24">
+    <section className="w-full bg-gray-900 py-24">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}

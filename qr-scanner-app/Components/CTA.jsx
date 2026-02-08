@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 const CTA = () => {
   return (
-    <section className="w-full py-28 bg-gray-950 border-t border-white/10">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+    <section className="w-full py-28 bg-gray-900 border-t border-white/10">
+      <div className="max-w-6xl mx-auto px- text-center">
 
         {/* Heading */}
         <motion.h2
