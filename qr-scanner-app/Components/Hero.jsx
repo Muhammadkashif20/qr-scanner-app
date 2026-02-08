@@ -1,49 +1,71 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 flex items-center">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
+    <section className="w-full min-h-screen bg-gray-950 flex items-center py-24">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
 
-        {/* Left Side: Text */}
-        <div className="flex-1 text-center md:text-left">
+        {/* LEFT SIDE - TEXT */}
+        <div className="text-center md:text-left space-y-6">
           <motion.h1
-            className="text-5xl md:text-6xl font-bold text-white mb-4"
-            initial={{ opacity: 0, y: -50 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
+            className="text-5xl md:text-6xl font-bold text-white leading-tight"
           >
-            Scan <span className="text-cyan-400">QR Codes</span> Instantly
+            Scan <span className="text-cyan-400">QR Codes</span> Effortlessly
           </motion.h1>
 
           <motion.p
-            className="text-white/70 text-lg md:text-xl mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-white/60 text-lg max-w-xl"
           >
-            Quickly scan and manage your QR codes with our professional and modern interface.
+            Fast, clean, and secure QR scanning experience. Just align the code and go.
           </motion.p>
 
           <motion.button
-            className="px-8 py-3 rounded-xl bg-cyan-500 text-white font-semibold hover:bg-cyan-400 transition"
             whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-10 py-4 rounded-2xl bg-cyan-400 text-black font-semibold text-lg shadow-lg hover:bg-cyan-300 transition mt-4"
           >
             Start Scanning
           </motion.button>
         </div>
 
-        {/* Right Side: Illustration / Image */}
+        {/* RIGHT SIDE - SCANNER MOCK */}
         <motion.div
-          className="flex-1 flex justify-center md:justify-end"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex justify-center md:justify-end"
         >
-          {/* Replace this div with an actual image */}
-          <div className="w-80 h-80 bg-cyan-500/20 rounded-2xl flex items-center justify-center text-white text-xl font-bold">
-            QR Image
+          <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-3xl border border-white/10 bg-black/50 backdrop-blur-sm overflow-hidden">
+
+            {/* Scanner corners */}
+            <span className="absolute top-3 left-3 w-6 h-6 border-l-2 border-t-2 border-cyan-400" />
+            <span className="absolute top-3 right-3 w-6 h-6 border-r-2 border-t-2 border-cyan-400" />
+            <span className="absolute bottom-3 left-3 w-6 h-6 border-l-2 border-b-2 border-cyan-400" />
+            <span className="absolute bottom-3 right-3 w-6 h-6 border-r-2 border-b-2 border-cyan-400" />
+
+            {/* Animated scan line */}
+            <motion.div
+              initial={{ y: 0 }}
+              animate={{ y: 240 }}
+              transition={{
+                repeat: Infinity,
+                duration: 2,
+                ease: "linear",
+              }}
+              className="absolute left-6 right-6 h-[2px] bg-cyan-400/80"
+            />
+
+            {/* QR hint text */}
+            <div className="absolute inset-0 flex items-center justify-center text-white/30 text-sm font-medium">
+              Place QR code here
+            </div>
           </div>
         </motion.div>
 

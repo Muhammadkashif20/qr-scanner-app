@@ -7,16 +7,17 @@ import CTA from "../Components/CTA";
 import Scanner from "../Components/Scanner";
 import History from "../Components/History";
 import Footer from "../Components/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import LandingPage from "../Components/LandingPage";
 
 function App() {
   return (
     <div className="min-h-screen">
-      <Header />
-      <Hero />
-      <Features/>
-      <WorkDetail />
-      <CTA />
-      <Footer /> 
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />}/>
+      </Routes>
+      </BrowserRouter>
       {/* <Scanner />
       <History /> */}
     </div>
