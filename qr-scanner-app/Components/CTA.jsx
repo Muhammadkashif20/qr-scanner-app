@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const CTA = () => {
   return (
@@ -28,15 +29,17 @@ const CTA = () => {
         </motion.p>
 
         {/* CTA Button */}
+        <Link to={"/scanner"}>
         <motion.button
           whileHover={{ scale: 1.06 }}
           whileTap={{ scale: 0.95 }}
           className="inline-flex items-center justify-center px-12 py-4 rounded-xl
           bg-cyan-400 text-black font-semibold text-lg
-          hover:bg-cyan-300 transition shadow-xl"
-        >
+          hover:bg-cyan-300 transition shadow-xl cursor-pointer"
+          >
           Start Scanning
         </motion.button>
+          </Link>
 
       </div>
     </section>

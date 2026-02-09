@@ -52,7 +52,7 @@ const Header = () => {
           className="hidden md:block"
         >
           <Link
-            to="/scan"
+            to="/scanner"
             className="px-6 py-2 rounded-xl border border-cyan-400/50 text-cyan-400 bg-cyan-500/10 font-semibold transition"
           >
             Start Scan
@@ -84,7 +84,7 @@ const Header = () => {
           ))}
 
           <Link
-            to="/scan"
+            to="/scanner"
             className="px-5 py-2 rounded-xl border border-cyan-400/50 text-cyan-400 bg-cyan-500/10 font-semibold hover:bg-cyan-500/20 hover:text-white transition"
             onClick={() => setMenuOpen(false)}
           >

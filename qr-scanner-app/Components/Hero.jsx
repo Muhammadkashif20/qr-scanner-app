@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -25,14 +26,15 @@ const Hero = () => {
           >
             Fast, clean, and secure QR scanning experience.<br/> Just align the code and go.
           </motion.p>
-
+        <Link to={"/scanner"}>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-10 py-4 rounded-2xl bg-cyan-400 text-black font-semibold text-lg shadow-lg hover:bg-cyan-300 transition mt-4"
+            className="px-10 py-4 rounded-2xl bg-cyan-400 text-black font-semibold text-lg shadow-lg hover:bg-cyan-300 transition mt-4 cursor-pointer"
           >
             Start Scanning
           </motion.button>
+        </Link>
         </div>
 
         {/* RIGHT SIDE - SCANNER MOCK */}

@@ -34,7 +34,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/scan" className="hover:text-cyan-400 transition">
+                <Link to="/scanner" className="hover:text-cyan-400 transition">
                   Scan
                 </Link>
               </li>
@@ -43,11 +43,11 @@ const Footer = () => {
                   History
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/privacy" className="hover:text-cyan-400 transition">
                   Privacy Policy
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -79,9 +79,11 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-white/10 pt-6 text-center text-white/50 text-sm">
-          © 2026 QRScan. All rights reserved.
-        </div>
+     <div className="border-t border-white/10 pt-6 text-center text-white/50 text-sm">
+  © 2026 QRScan. All rights reserved. <br />
+  Created by <span className="text-cyan-400 font-medium">M.Kashif</span>
+</div>
+
 
       </div>
     </footer>
