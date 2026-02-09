@@ -1,10 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Footer from "./Footer";
 import Header from "./Header";
 import QrScanner from "qr-scanner";
 const ScannerPage = () => {
+    const [isScanning, setIsScanning] = useState(true);
     const videoRef = useRef(null);
+    
   useEffect(()=>{
     const scanner=new QrScanner(
       videoRef.current,
@@ -12,12 +14,16 @@ const ScannerPage = () => {
         console.log("QR Code detected:",result);
       },
       {highlightScanRegion:true}
+      
     )
     scanner.start();
+    
     return()=>{
       scanner.stop();
       scanner.destroy();
     }
+    
+   
   })
   return (
     <div className="bg-gray-950 min-h-screen flex flex-col">
@@ -33,7 +39,7 @@ const ScannerPage = () => {
           {/* Camera Preview Box */}
           <div className="relative w-80 h-80 md:w-96 md:h-96 bg-black/40 border border-white/20 rounded-2xl flex items-center justify-center shadow-inner overflow-hidden">
             <span className="text-white/40 text-lg md:text-xl font-medium z-10">
-              Camera Preview
+             Camera Preview
                  <video ref={videoRef} className="w-80 rounded-xl" />
             </span>
 
