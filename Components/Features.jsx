@@ -28,7 +28,7 @@ const Features = () => {
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Why Choose <span className="text-cyan-400">QRScan</span>
+            Why Choose <span className="text-cyan-400">QR-Scanner</span>
           </h2>
           <p className="mt-4 text-white/60 max-w-xl mx-auto">
             Designed for speed, security, and simplicity — everything you need in one place.
