@@ -1,14 +1,22 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Footer from "./Footer";
 import Header from "./Header";
 import QrScanner from "qr-scanner";
-import { AiOutlineUpload } from "react-icons/ai";
-      import { FiUploadCloud } from "react-icons/fi";
+import { FiUploadCloud } from "react-icons/fi";
 
 const ScannerPage = () => {
+  const [file, setfile] = useState(null);
   const videoRef = useRef(null);
+  const fileRef = useRef(null);
+  const handleClick = () => {
+    fileRef.current.click();
+  }
 
+  const handleFile = (e) => {
+    setfile(e.target.files)
+    console.log("file", file)
+  }
   useEffect(() => {
     const scanner = new QrScanner(
       videoRef.current,
@@ -65,25 +73,33 @@ const ScannerPage = () => {
 
             {/* Drag & Drop Box */}
 
-<motion.div
-  whileHover={{ scale: 1.03, boxShadow: "0 0 25px rgba(8,145,178,0.4)" }}
-  whileTap={{ scale: 0.97 }}
-  className="w-full md:w-1/2 bg-gray-900/30 backdrop-blur-lg border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center cursor-pointer transition-all duration-300"
->
-  <motion.div
-    animate={{ y: [0, -12, 0], opacity: [1, 0.8, 1] }}
-    transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-  >
-    <FiUploadCloud className="text-cyan-400 w-16 h-16 mb-4" />
-  </motion.div>
-  <p className="text-white/50 text-center mb-1 font-medium">
-    Drag & Drop QR File Here
-  </p>
-  <p className="text-white/40 text-center text-sm">
-    Or click to browse files
-  </p>
-</motion.div>
-
+            <motion.div
+              onClick={handleClick}
+              ref={fileRef}
+              whileHover={{ scale: 1.03, boxShadow: "0 0 25px rgba(8,145,178,0.4)" }}
+              whileTap={{ scale: 0.97 }}
+              className="w-full md:w-1/2 bg-gray-900/30 backdrop-blur-lg border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center cursor-pointer transition-all duration-300"
+            >
+              <motion.div
+                animate={{ y: [0, -12, 0], opacity: [1, 0.8, 1] }}
+                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+              >
+                <FiUploadCloud className="text-cyan-400 w-16 h-16 mb-4" />
+              </motion.div>
+              <p className="text-white/50 text-center mb-1 font-medium">
+                Drag & Drop QR File Here
+              </p>
+              <p className="text-white/40 text-center text-sm">
+                Or click to browse files
+              </p>
+            </motion.div>
+            <input
+              type="file"
+              ref={fileRef}
+              onChange={handleFile}
+              accept="image/*"
+              style={{ display: "none" }}
+            />
 
           </div>
 
