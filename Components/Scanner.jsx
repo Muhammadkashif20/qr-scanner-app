@@ -11,11 +11,12 @@ const ScannerPage = () => {
   const fileRef = useRef(null);
   const handleClick = () => {
     fileRef.current.click();
+
   }
 
   const handleFile = (e) => {
     setfile(e.target.files)
-    console.log("file", file)
+    console.log("file=>", file)
   }
   useEffect(() => {
     const scanner = new QrScanner(
